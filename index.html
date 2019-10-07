@@ -4,19 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <!-- Add bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- add Meyer 2.0 reset css file -->
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stlesheet" href="assets/css/style.css">
+    <title>The Psychic Game</title>
 </head>
+
 <body>
+        <div id="display">
+            <h1>The Pschic Game</h1>
+            <br>
+            <br>
+            <h5>Guess what letter I'm thinkeing of:</h5>
+            <ul>
+                <li>Wins:</li>
+                <li>Loses:</li>
+                <li>Gueses Left:</li>
+            </ul>
+                
+        </div>
     
-</body>
-</html>
 
 
 
 
 
 
-<script>
+
+        <script type="text/javascript"> 
         //My Psudo code indented from instructions
 
 //  You're going to make a game just like the one in the video. Essentially, 
@@ -58,9 +75,81 @@
 
 // 9. When the player loses, increase the Losses counter and restart the game without a page refresh (just like when the user wins).
 
+//  Global
+                     var alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+                    var keyP = "c";
+                    var triesLeft = 9;
+                    var wins = 0;
+                    var loses = 0;
+                    console.log(wins,loses,triesLeft);
+                
+                    // var compGuess = alphabet[Math.floor(Math.random()*(alphabet.length))];
+                    // console.log ("compGuess");
+                    // console.log (compGuess);
+                   
+                    
+                    
+                    
+                  
+// Logic
+            //      logic for keyboard read
+                    // document.onkeydown = function(event){
+                    // keyP = String.fromCharCode(event.keycode);b
+            
+             //     logic to compare key entry against the computer
+             //     update counters
+                 
+                    // if (keyP ===compGus) {
+                    // wins++;
+                    // console.log (wins, loses, triesLeft)
+                    // }
+                    
+                    // else {triesLeft -- ; 
+                    //  loses ++;
+                    // console.log (wins, loses, triesLeft)
+                    // }
+                    
+            //      function to generate random guess
+                        
+                    function randomGuess(alphabet) {
+                        return alphabet[Math.floor(Math.random()*(alphabet.length))];
+                    }
+                    var alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+                    console.log (randomGuess(alphabet));
+                    compGuess=randomGuess(alphabet);
+                    
+                        
+                       
+            // //      logic compare computer Guess with keypress
+
+                    if (keyP == compGuess) {
+                        wins++;
+                        }
+                    else if ((keyP != compGuess) && triesLeft >0){
+                        triesLeft--;
+                        }
+                    else   {
+                        loses--;
+                    }
+
+                    console.log(wins,loses,triesLeft);
+                   
+
+                    
+                    
+                    
+                    
+                   
+                    
+
+
+
+                    
+        
 
 
 
 
-
-</script>
+            </script>
+</body>
+</html>
