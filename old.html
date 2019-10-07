@@ -1,3 +1,4 @@
+  
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +14,7 @@
 </head>
 
 <body>
-        <div>
+        <div id="display">
             <h1>The Pschic Game</h1>
             <br>
             <br>
@@ -21,42 +22,30 @@
                 <p id="wina-text">Wins here</p> 
                 <p id="loses-text">Losses here</p> 
                 <p id="tries_left-text">Tries left here></p> 
-                <p id="letters_guessed-text">Letters guessed here</p>
+                <p id="letters_guessed-text">Letters guessed here</p>f
             
                 
         </div>
 
         <script type="text/javascript"> 
         //My Psudo code 
-
         // game start, display initializzes guessed letters blank, number of guess left countdow initializes to 9, wins initialises to zero, losses initializes to zero,
-
         //Computer randomly guesses letter of alphabet
-
         //Player enters guess from keyboard
             //add guess to guess so far
-
         //compare computer guess to player guess
-
         // if e1qual, player wins, increment wins counter, Alert "you won"
-
         //if not equal, and if number of  guesses left counter is greater than zero 
                 //decrement tries left
                 //add to lettersGuessedText string
                 //refresh display
-
         //elst refresh  display Alert "You Lost"
         //restart game
-
-
 //vribles to update HTML
-
                     var winsText = document.getElementById("wins-text");
                     var lossesText = document.getElementById("losses-text");
                     var triesLeftText = document.getElementById("tries_left");
                     var lettersGuessedText = document.getElementById("letters_guessedt");
-
-
 //  Global variables logic
                     var alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
                     //var userGuess = "c";
@@ -69,15 +58,14 @@
 // Logic
             //      logic for keyboard read
                     document.onkeyup = function(event) {
-                        var userGuess = event.key; // tried String.fromCharCode(event.keyCode).toLowerCase;---NEED TO ADD LOGIC TO CONVERT TO  LOWER CASE
-                    console.log (userGuess);
-            
+                        var userGuess = event.key // tried String.fromCharCode(event.keyCode).toLowerCase;---NEED TO ADD LOGIC TO CONVERTOT  LOWER CASE
                     
             //      logic for computer guess       
-                    var randomGuess = alphabet[Math.floor(Math.random()*(alphabet.length))];
+                        var randomGuess = alphabet[Math.floor(Math.random()*(alphabet.length))];
                      console.log (randomGuess);
-                     
-            // //       logic for comparing computer guess against userGuess
+                     console.log (userGuess);
+            
+            //      logic for comparing computer guess against userGuess
                         
                         if (userGuess === randomGuess) {
                         wins++;
@@ -88,16 +76,11 @@
                         } 
                         else   {
                         }
-
                         console.log(wins,losses,triesLeft);
-
             //        update DOM with stats    
-                        // winsText.textContent = "wins:" + wins;
-                        // lossesText.textContent = "losses: :" + triesLeft;
-                        // triesLeftText.textContent = "trys left:: :" + triesLeft;
-                        // lettersGuessedText.textContent = "losses: :" + triesLeft;
-                       }
-
+                        winsText.textContent = "wins:" + wins;
+                        lossesText.textContent = "losses: :" + triesLeft;
+                    }
             
                     
                         
